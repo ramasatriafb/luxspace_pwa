@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import Arrived from '../components/Arrived';
 import AsideMenu from '../components/AsideMenu';
 import Browse from '../components/Browse';
@@ -7,6 +9,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Offline from '../components/Offline';
+import Profile from './Profile';
 import Splash from './Splash';
 
 function Main() {
@@ -66,4 +69,11 @@ function Main() {
   );
 }
 
-export default Main;
+export default function Routes(){
+  return(
+    <Router>
+      <Route path="/" exact component={Main} />
+      <Route path="/profile" exact component={Profile} />
+    </Router>
+  );
+}
