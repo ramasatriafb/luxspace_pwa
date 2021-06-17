@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Offline from '../components/Offline';
+import Details from './Details';
 import Profile from './Profile';
 import Splash from './Splash';
 
@@ -57,7 +58,7 @@ function Main() {
     {isLoading ? <Splash /> : 
     (
       <>{offlineStatus && <Offline /> }
-        <Header/>
+        <Header mode="light"/>
         <Hero />
         <Browse />
         <Arrived items={items}/>
@@ -74,6 +75,7 @@ export default function Routes(){
     <Router>
       <Route path="/" exact component={Main} />
       <Route path="/profile" exact component={Profile} />
+      <Route path="/details/:id" component={Details} />
     </Router>
   );
 }
